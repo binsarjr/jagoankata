@@ -10,9 +10,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
   autoprefixer: ^10.4.7
-  convert-csv-to-array: ^1.0.3
-  csv: ^6.2.8
-  csv-parser: ^3.0.0
+  csv-string: ^4.1.1
   eslint: ^8.28.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
@@ -23,7 +21,6 @@ specifiers:
   sass: ^1.53.0
   svelte: ^3.54.0
   svelte-check: ^3.0.1
-  svelte-countdown: ^1.1.2
   svelte-preprocess: ^4.10.7
   tailwindcss: ^3.1.5
   tslib: ^2.4.1
@@ -31,10 +28,7 @@ specifiers:
   vite: ^4.0.0
 
 dependencies:
-  convert-csv-to-array: 1.0.3
-  csv: 6.2.8
-  csv-parser: 3.0.0
-  svelte-countdown: 1.1.2
+  csv-string: 4.1.1
 
 devDependencies:
   '@fontsource/fira-mono': 4.5.10
@@ -769,16 +763,6 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
-  /convert-csv-to-array/1.0.3:
-    resolution: {integrity: sha512-F2o7RgfkegFwbxJN+mryqPPJHQaUzRej5JU3dzaXMPk7hVJKnsHu/Mm/y8rku/oflNyEILAbOKe8FcEAQkpxwg==}
-    dependencies:
-      convert-string-to-number: 1.0.3
-    dev: false
-
-  /convert-string-to-number/1.0.3:
-    resolution: {integrity: sha512-ZvP2/ob7UvvC6s7euMDU2JXYz1dTdBXS8QvOgCPOiGHHYNsKcJ/WZUui3wL0vngXRfM7/3QSFF2PZWlPjgKeUA==}
-    dev: false
-
   /cookie/0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
@@ -799,38 +783,9 @@ packages:
     hasBin: true
     dev: true
 
-  /csv-generate/4.2.2:
-    resolution: {integrity: sha512-Ah/NcMxHMqwQsuL173yp8EOzHrbLh8iyScqTy990b+TJZNjHhy7gs5FfSmyQ2arLC2QVrueO3DYJVQnibJB3WQ==}
-    dev: false
-
-  /csv-parse/5.3.6:
-    resolution: {integrity: sha512-WI330GjCuEioK/ii8HM2YE/eV+ynpeLvU+RXw4R8bRU8R0laK5zO3fDsc4gH8s472e3Ga38rbIjCAiQh+tEHkw==}
-    dev: false
-
-  /csv-parser/3.0.0:
-    resolution: {integrity: sha512-s6OYSXAK3IdKqYO33y09jhypG/bSDHPuyCme/IdEHfWpLf/jKcpitVFyOC6UemgGk8v7Q5u2XE0vvwmanxhGlQ==}
-    engines: {node: '>= 10'}
-    hasBin: true
-    dependencies:
-      minimist: 1.2.8
-    dev: false
-
-  /csv-stringify/6.3.0:
-    resolution: {integrity: sha512-kTnnBkkLmAR1G409aUdShppWUClNbBQZXhrKrXzKYBGw4yfROspiFvVmjbKonCrdGfwnqwMXKLQG7ej7K/jwjg==}
-    dev: false
-
-  /csv/6.2.8:
-    resolution: {integrity: sha512-QGemEqFr5XgbHcufWwO+qnReFhClbd+6WywKDVqEXmRfGrJHl5fRrlphZUnsky2YAwcCxYJJilPUfaWbuBMfWA==}
-    engines: {node: '>= 0.1.90'}
-    dependencies:
-      csv-generate: 4.2.2
-      csv-parse: 5.3.6
-      csv-stringify: 6.3.0
-      stream-transform: 3.2.2
-    dev: false
-
-  /dayjs/1.10.1:
-    resolution: {integrity: sha512-2xg7JrHQeLBQFkvTumLoy62x1siyeocc98QwjtURgvRqOPYmAkMUdmSjrOA+MlmL6QMQn5MUhDf6rNZNuPc1LQ==}
+  /csv-string/4.1.1:
+    resolution: {integrity: sha512-KGvaJEZEdh2O/EVvczwbPLqJZtSQaWQ4cEJbiOJEG4ALq+dBBqNmBkRXTF4NV79V25+XYtiqbco1IWrmHLm5FQ==}
+    engines: {node: '>=12.0'}
     dev: false
 
   /debug/4.3.4:
@@ -1423,6 +1378,7 @@ packages:
 
   /minimist/1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
+    dev: true
 
   /mkdirp/0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
@@ -1831,10 +1787,6 @@ packages:
     deprecated: Please use @jridgewell/sourcemap-codec instead
     dev: true
 
-  /stream-transform/3.2.2:
-    resolution: {integrity: sha512-DHZQPNxvjU2qdQlGcpitn8pkJHQVTqdshtgXaLz6Vc5VCAognbGuuwGS5ugeqGVnyw8j4h89QcV8cwm0D1+V0A==}
-    dev: false
-
   /streamsearch/1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
     engines: {node: '>=10.0.0'}
@@ -1897,12 +1849,6 @@ packages:
       - stylus
       - sugarss
     dev: true
-
-  /svelte-countdown/1.1.2:
-    resolution: {integrity: sha512-datUfbRtGCp+7OwIRcbW9tbIwlkN7KiJp9Mg01Na9HgSQrLG0knsD/xjaIVKPovxY8xF0yOrbPEz+bT/BS9EBQ==}
-    dependencies:
-      dayjs: 1.10.1
-    dev: false
 
   /svelte-hmr/0.15.1_svelte@3.57.0:
     resolution: {integrity: sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==}
