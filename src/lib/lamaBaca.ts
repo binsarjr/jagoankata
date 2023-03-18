@@ -1,4 +1,4 @@
-export const lamaBaca = (text: string, wordsPerMinute = 50) => {
+export const lamaBaca = (text: string, wordsPerMinute = 80) => {
 	// Memecah teks menjadi array kata-kata
 	const words = text.split(' ');
 
