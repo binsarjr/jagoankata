@@ -9,4 +9,9 @@ declare global {
 	}
 }
 
-export {};
+export { }
+
+export interface KataKataInspirasi {
+	author: string;
+	text: string;
+}
