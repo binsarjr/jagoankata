@@ -35,7 +35,7 @@
 
 </script>
 
-<main class="flex flex-col justify-center items-center h-screen w-[90vw] mx-auto">
+<main class="flex flex-col justify-center items-center min-h-screen max-h-screen w-[90vw] mx-auto">
 	{#await getData()}
 		loading...
 	{:then _}
