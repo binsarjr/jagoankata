@@ -6,7 +6,6 @@ export const GET: RequestHandler = async ({ setHeaders, url }) => {
     let data: KataKataInspirasi[] = []
 
     const urls = [
-        'https://raw.githubusercontent.com/binsarjr/koleksi-jagoankata/results/filsuf.csv',
         'https://github.com/binsarjr/koleksi-jagoankata/raw/results/brainyquote.csv',
         'https://github.com/binsarjr/koleksi-jagoankata/raw/results/www.goodreads.com.csv'
     ]
@@ -23,7 +22,7 @@ export const GET: RequestHandler = async ({ setHeaders, url }) => {
     }))
 
 
-    data = results.flat()
+    data = [...new Set(results.flat())]
 
 
 
