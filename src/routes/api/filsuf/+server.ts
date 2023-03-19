@@ -10,7 +10,7 @@ export const GET: RequestHandler = async ({ setHeaders, url }) => {
         'https://github.com/binsarjr/koleksi-jagoankata/raw/results/brainyquote.csv',
         'https://github.com/binsarjr/koleksi-jagoankata/raw/results/www.goodreads.com.csv'
     ]
-   
+
 
     const results = await Promise.all(urls.map(async url => {
         const resp = await fetch(url.toString())
@@ -21,7 +21,17 @@ export const GET: RequestHandler = async ({ setHeaders, url }) => {
     }))
 
 
-    data = [...new Set(results.flat())]
+    data = [...new Set(results.flat())].map(obj => {
+        const lowerCaseObj: KataKataInspirasi = {
+            author: '',
+            text: ''
+        }
+        Object.entries(obj).forEach(([key, value]) => {
+            // @ts-ignore
+            lowerCaseObj[key.toLowerCase()] = value
+        })
+        return lowerCaseObj
+    })
 
 
 
