@@ -6,15 +6,14 @@ export const GET: RequestHandler = async ({ setHeaders, url }) => {
     let data: KataKataInspirasi[] = []
 
     const urls = [
+        'https://github.com/binsarjr/koleksi-jagoankata/raw/results/filsuf.csv',
         'https://github.com/binsarjr/koleksi-jagoankata/raw/results/brainyquote.csv',
         'https://github.com/binsarjr/koleksi-jagoankata/raw/results/www.goodreads.com.csv'
     ]
-    const target = new URL(url.toString())
-    target.pathname = '/data/filsuf.csv'
-    urls.push(target.toString())
+   
 
     const results = await Promise.all(urls.map(async url => {
-        const resp = await fetch(target.toString())
+        const resp = await fetch(url.toString())
         // @ts-ignore
         return parse(await resp.text(), {
             output: "objects"
